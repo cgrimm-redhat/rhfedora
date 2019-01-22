@@ -1,0 +1,16 @@
+---
+# tasks file for rhfedora
+- name: Import GPG keys for Repos
+  rpm_key:
+    state: present
+    key: "{{ gpg_keys}}"
+
+- name: Configure Sublime Repositories
+  yum_repository:
+    name: Sublime Text - x86_64 - Stable
+    description: sublime-text
+    file: sublime-text
+    baseurl: https://download.sublimetext.com/rpm/stable/x86_64
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg

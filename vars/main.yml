@@ -6,6 +6,16 @@ baseline_packages:
   - git
   - curl
   - terminator
+  - google-chrome
+  - sublime-text
+  - asciidoctor
 
 baseline_downloads:
   - https://downloads.slack-edge.com/linux_releases/slack-3.3.7-0.1.fc21.x86_64.rpm
+  - http://atom.io/download/rpm
+  - https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.14.7/rocketchat-2.14.7.x86_64.rpm
+
+gpg_keys:
+  - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+
