@@ -3,14 +3,15 @@ Role Name
 
 This role is designed to do a baseline configuration and prep for a newly configured Fedora system for use by Red Hat employees.  
 
-install this directory in your roles path under the name `rhfedora`
+Install this directory in your `roles` path under the name `rhfedora`
 
 ```
-git this-git-repo roles/rhfedora
+git clone this-git-repo roles/rhfedora
 ```
 
 Requirements
 ------------
+
 At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.
 
 Role Variables
@@ -23,14 +24,42 @@ Dependencies
 
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-Example Playbook
-----------------
+Usage
+------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+This role is designed to be used with tags depending upon your desired end state.  Currently there are three major tags that need to be considered `baseline`, `platform`, and `developer`.  Without limiting to any tags all 3 major components will be installed with the `baseline` tasks always executing unless skipped.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+
+## Install all profiles
+```
+$ ansible-playbook rhfedora.yml -K
+```
+
+## Platform Profile
+```
+$ ansible-playbook rhfedora.yml -t platform -K
+```
+
+## Developer Profile.
+```
+$ ansible-playbook rhfedora.yml -t developer -K
+```
+
+## Baseline Profile Only
+```
+$ ansible-playbook rhfedora.yml -t baseline -K
+```
+
+## Developer or Platform Without RH Baseline
+```
+$ ansible-playbook rhfedora.yml -t platform --skip-tags baseline -k
+```
+
+# Size Test
+## Size Test 2
+### Size Test 3
+#### Size Test 4
+
 
 License
 -------
