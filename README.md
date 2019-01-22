@@ -52,7 +52,7 @@ $ ansible-playbook rhfedora.yml -t baseline -K
 
 ### Developer or Platform Without RH Baseline
 ```
-$ ansible-playbook rhfedora.yml -t platform --skip-tags baseline -k
+$ ansible-playbook rhfedora.yml -t platform --skip-tags baseline -K
 ```
 
 ## Example Playbook
@@ -72,5 +72,4 @@ BSD
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Chris Grimm - cgrimm@redhat.com - github.com/cgrimm-redhat
