@@ -55,7 +55,7 @@ $ ansible-playbook rhfedora.yml -t baseline -K
 $ ansible-playbook rhfedora.yml -t platform --skip-tags baseline -k
 ```
 
-##Example Playbook
+## Example Playbook
 
 ```
 ---
