@@ -3,6 +3,12 @@ Role Name
 
 This role is designed to do a baseline configuration and prep for a newly configured Fedora system for use by Red Hat employees.  
 
+install this directory in your roles path under the name `rhfedora`
+
+```
+git this-git-repo roles/rhfedora
+```
+
 Requirements
 ------------
 At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.
