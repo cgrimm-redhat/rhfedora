@@ -15,9 +15,7 @@ Requirements
 At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.  Additionally ansible, python, and 
 
 ```
-$ sudo dnf install ansible
-$ sudo dnf install python
-$ sudo dnf install libselinux-python
+$ sudo dnf install ansible python libselinux-python
 ```
 
 Role Variables
