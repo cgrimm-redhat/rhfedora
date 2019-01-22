@@ -1,2 +1,12 @@
 ---
 # vars file for rhfedora
+ansible_python_interpreter: /usr/bin/python3
+
+baseline_packages:
+  - git
+  - curl
+  - terminator
+
+baseline_downloads:
+  - https://downloads.slack-edge.com/linux_releases/slack-3.3.7-0.1.fc21.x86_64.rpm
+  - 
