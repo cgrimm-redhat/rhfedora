@@ -30,36 +30,40 @@ Usage
 This role is designed to be used with tags depending upon your desired end state.  Currently there are three major tags that need to be considered `baseline`, `platform`, and `developer`.  Without limiting to any tags all 3 major components will be installed with the `baseline` tasks always executing unless skipped.
 
 
-## Install all profiles
+### Install all profiles
 ```
 $ ansible-playbook rhfedora.yml -K
 ```
 
-## Platform Profile
+### Platform Profile
 ```
 $ ansible-playbook rhfedora.yml -t platform -K
 ```
 
-## Developer Profile.
+### Developer Profile.
 ```
 $ ansible-playbook rhfedora.yml -t developer -K
 ```
 
-## Baseline Profile Only
+### Baseline Profile Only
 ```
 $ ansible-playbook rhfedora.yml -t baseline -K
 ```
 
-## Developer or Platform Without RH Baseline
+### Developer or Platform Without RH Baseline
 ```
 $ ansible-playbook rhfedora.yml -t platform --skip-tags baseline -k
 ```
 
-# Size Test
-## Size Test 2
-### Size Test 3
-#### Size Test 4
+##Example Playbook
 
+```
+---
+- hosts: localhost
+  become: true
+  roles:
+    - rhfedora
+```
 
 License
 -------
