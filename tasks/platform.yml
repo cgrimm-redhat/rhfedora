@@ -1,0 +1,6 @@
+---
+# tasks file for rhfedora
+- name: platform upgrading all packages with dnf
+  dnf:
+    name: "*"
+    state: latest

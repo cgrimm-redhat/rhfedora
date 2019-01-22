@@ -1,0 +1,6 @@
+---
+# tasks file for rhfedora
+- name: developer upgrading all packages with dnf
+  dnf:
+    name: "*"
+    state: latest

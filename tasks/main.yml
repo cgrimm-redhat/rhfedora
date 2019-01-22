@@ -1,2 +1,13 @@
 ---
 # tasks file for rhfedora
+- import_tasks: baseline.yml
+  tags:
+    - always
+    - baseline
+- import_tasks: platform.yml
+  tags:
+    - platform
+- import_tasks: developer.yml
+  tags:
+    - developer
+

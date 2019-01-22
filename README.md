@@ -1,12 +1,11 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role is designed to do a baseline configuration and prep for a newly configured Fedora system for use by Red Hat employees.  
 
 Requirements
 ------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.
 
 Role Variables
 --------------
