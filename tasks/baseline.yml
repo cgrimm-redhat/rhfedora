@@ -10,7 +10,7 @@
     name: "{{ baseline_packages }}"
     state: latest
 
-- name: Make directory /tmp/rpms
+- name: Make directory for third party apps /tmp/rpms
   file:
     path: /tmp/rpms
     state: directory
@@ -21,7 +21,7 @@
     dest: /tmp/rpms
   register: rpms_copied
 
-- name: Validate RPMS were found
+- name: Validate RPMS were downloaded
   fail:
     msg: "RPMs not found in ../files/"
   when: rpms_copied.results|length == 0 and rpms_copied.skipped and rpms_copied.skipped_reason.find('No items') != -1
@@ -29,6 +29,6 @@
 - set_fact:
     rpm_list: "{{ rpms_copied.results | map(attribute='dest') | list}}"
 
-- name: install RPMs
+- name: Install Non-DNF Downloaded packages
   yum:
     name: "{{rpm_list}}"
