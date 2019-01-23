@@ -9,6 +9,9 @@ baseline_packages:
   - google-chrome
   - sublime-text
   - asciidoctor
+  - libvirt
+  - virt-manager
+  - vim
 
 baseline_downloads:
   - https://downloads.slack-edge.com/linux_releases/slack-3.3.7-0.1.fc21.x86_64.rpm
@@ -18,4 +21,14 @@ baseline_downloads:
 gpg_keys:
   - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
-
+developer_packages:
+  - maven
+  - ant
+  - subversion
+  - ruby
+  - python
+  - nodejs
+  - python3
+  - fuse-exfat
+  - vagrant
+  - docker
