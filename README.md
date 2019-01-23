@@ -12,7 +12,7 @@ git clone this-git-repo roles/rhfedora
 Requirements
 ------------
 
-At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.  Additionally ansible, python, and libselinux-python 
+At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.  Additionally ansible, python, and libselinux-python need to be installed prior to running this role against a new system. 
 
 ```
 $ sudo dnf install ansible python libselinux-python
