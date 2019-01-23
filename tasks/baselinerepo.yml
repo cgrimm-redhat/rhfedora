@@ -1,9 +1,9 @@
 ---
 # tasks file for rhfedora
-- name: Import GPG keys for Repos
-  rpm_key:
-    state: present
-    key: "{{ gpg_keys}}"
+#- name: Import GPG keys for Repos
+#  rpm_key:
+  #    state: present
+  #    key: "{{ gpg_keys}}"
 
 - name: Configure Sublime Repositories
   yum_repository:

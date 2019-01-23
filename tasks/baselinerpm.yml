@@ -7,8 +7,9 @@
     
 - name: Download Non-DNF installabe packages
   get_url:
-    url: "{{ baseline_downloads }}"
+    url: "{{ item }}"
     dest: /tmp/rpms
+  with_items: "{{ baseline_downloads }}"   
   register: rpms_copied
 
 - name: Validate RPMS were downloaded

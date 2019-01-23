@@ -1,13 +1,15 @@
 ---
 # tasks file for rhfedora
-- import_tasks: "{{ item }}"
-  with_items:
-    - baselinerepo.yml
-    - baselinerpm.yml
-    - baseline.yml
+- import_tasks: baselinerepo.yml
   tags:
     - baseline
-    
+- import_tasks: baselinerpm.yml
+  tags:
+    - baseline
+- import_tasks: baseline.yml
+  tags:
+    - baseline
+
 - import_tasks: developer.yml
   tags:
     - developer
