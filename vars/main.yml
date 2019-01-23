@@ -1,6 +1,6 @@
 ---
 # vars file for rhfedora
-ansible_python_interpreter: /usr/bin/python3
+#ansible_python_interpreter: /usr/bin/python3
 
 baseline_packages:
   - git
