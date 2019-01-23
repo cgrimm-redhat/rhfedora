@@ -45,7 +45,6 @@ $ ansible-playbook rhfedora.yml --skip-tags developer -K
 ```
 
 ## Example Playbook
-
 ```
 ---
 - hosts: localhost
