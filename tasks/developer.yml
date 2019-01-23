@@ -1,6 +1,29 @@
 ---
 # tasks file for rhfedora
-- name: developer upgrading all packages with dnf
+- name: Installing Developer DNF Packages 
   dnf:
-    name: "*"
+    name: "{{ developer_packages }}"
     state: latest
+
+    #- name: Make directory for developer third party apps /tmp/dev/rpms
+    #  file:
+    #    path: /tmp/dev/rpms
+    #    state: directory
+    #    
+    #- name: Download developer Non-DNF installable packages
+    #  get_url:
+    #    url: "{{ developer_downloads }}"
+    #    dest: /tmp/dev/rpms
+    #  register: rpms_copied
+    #
+    #- name: Validate RPMS were downloaded
+    #  fail:
+    #    msg: "RPMs not found in ../files/"
+    #  when: rpms_copied.results|length == 0 and rpms_copied.skipped and rpms_copied.skipped_reason.find('No items') != -1
+    #
+    #- set_fact:
+    #    devrpm_list: "{{ rpms_copied.results | map(attribute='dest') | list}}"
+    #
+    #- name: Install Developer Non-DNF Downloaded packages
+    #  dnf:
+    #    name: "{{devrpm_list}}"

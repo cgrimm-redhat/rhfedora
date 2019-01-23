@@ -30,5 +30,5 @@
     rpm_list: "{{ rpms_copied.results | map(attribute='dest') | list}}"
 
 - name: Install Non-DNF Downloaded packages
-  yum:
+  dnf:
     name: "{{rpm_list}}"
