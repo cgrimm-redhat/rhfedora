@@ -12,7 +12,7 @@ git clone this-git-repo roles/rhfedora
 Requirements
 ------------
 
-At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.  Additionally ansible, python, and 
+At this point in time DNF is the required package manager.  YUM support maybe added at a later point in time.  Additionally ansible, python, and libselinux-python 
 
 ```
 $ sudo dnf install ansible python libselinux-python
@@ -31,32 +31,17 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Usage
 ------------
 
-This role is designed to be used with tags depending upon your desired end state.  Currently there are three major tags that need to be considered `baseline`, `platform`, and `developer`.  Without limiting to any tags all 3 major components will be installed with the `baseline` tasks always executing unless skipped.
+This role is designed to be used with tags depending upon your desired end state.  Currently there are two major profiles split apart via tags `baseline` and  `developer`.  The baseline package will install a subset of applications along with a base configuration for using your Fedora system with the RH networks.  This will include items such as inteagrtion of kerberos, VPN, etc.  The developer profile is an additional set of applications & configurations that will allow for app development, docker usage, etc to be built into the system for use.  Without limiting any tags both profiles will be installed. Below are some tagged use cases.
 
 
-### Install all profiles
+### Install both profiles
 ```
 $ ansible-playbook rhfedora.yml -K
 ```
 
-### Platform Profile
+### Install Baseline Profile Only
 ```
-$ ansible-playbook rhfedora.yml -t platform -K
-```
-
-### Developer Profile.
-```
-$ ansible-playbook rhfedora.yml -t developer -K
-```
-
-### Baseline Profile Only
-```
-$ ansible-playbook rhfedora.yml -t baseline -K
-```
-
-### Developer or Platform Without RH Baseline
-```
-$ ansible-playbook rhfedora.yml -t platform --skip-tags baseline -K
+$ ansible-playbook rhfedora.yml --skip-tags developer -K
 ```
 
 ## Example Playbook
