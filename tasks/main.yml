@@ -2,15 +2,12 @@
 # tasks file for rhfedora
 - import_tasks: "{{ item }}"
   with_items:
-    - repoinstall.yml
-    - downloadinstall.yml
+    - baselinerepo.yml
+    - baselinerpm.yml
     - baseline.yml
   tags:
-    - always
     - baseline
-- import_tasks: platform.yml
-  tags:
-    - platform
+    
 - import_tasks: developer.yml
   tags:
     - developer
