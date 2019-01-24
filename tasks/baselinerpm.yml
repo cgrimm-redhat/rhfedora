@@ -5,21 +5,29 @@
     path: /tmp/rpms
     state: directory
     
-- name: Download Non-DNF installabe packages
+- name: Downloading Non-DNF hosted packages
   get_url:
     url: "{{ item }}"
     dest: /tmp/rpms
   with_items: "{{ baseline_downloads }}"   
   register: rpms_copied
+  tags:
+    - download
 
 - name: Validate RPMS were downloaded
   fail:
     msg: "RPMs not found in ../files/"
   when: rpms_copied.results|length == 0 and rpms_copied.skipped and rpms_copied.skipped_reason.find('No items') != -1
+  tags:
+    - download
 
 - set_fact:
     rpm_list: "{{ rpms_copied.results | map(attribute='dest') | list}}"
+  tags:
+    - download
 
-- name: Install Non-DNF Downloaded packages
+- name: Installing Non-DNF Downloaded packages
   yum:
     name: "{{rpm_list}}"
+  tags:
+    - download 

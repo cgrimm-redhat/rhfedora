@@ -7,10 +7,30 @@
 
 - name: Configure Sublime Repositories
   yum_repository:
-    name: Sublime Text - x86_64 - Stable
-    description: sublime-text
+    name: sublime-text 
+    description: Sublime Text - x86_64 - Stable
     file: sublime-text
     baseurl: https://download.sublimetext.com/rpm/stable/x86_64
     enabled: yes
     gpgcheck: yes
     gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+- name: Configure Google-Chrome Repositories
+  yum_repository:
+    name: google-chrome
+    description: google-chrome
+    file: google-chrome
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub  
+
+- name: Configure Powershell for Linux Repos
+  yum_repository:
+    name: packages-microsoft-com-prod
+    description: packages-microsoft-com-prod
+    file: microsoft
+    baseurl: https://packages.microsoft.com/rhel/7/prod/
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc

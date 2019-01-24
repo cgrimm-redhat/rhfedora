@@ -10,8 +10,31 @@
   dnf:
     name: "*"
     state: latest
+    
+- name: Setup up RPM Fusion Repository
+  dnf:
+    name: "{{ rpmfusion }}"
+    state: present
 
 - name: Installing Baseline Packages
   dnf:
     name: "{{ baseline_packages }}"
     state: latest
+
+- name: Copy VPN RPMs over
+  copy:
+    src: "{{ item }}"
+    dest: /tmp/vpn/
+  with_fileglob: "*.rpm"  
+  register: vpn_files
+
+- name: Set VPN RPM variable    
+  set_fact:
+    vpn_rpms: "{{ vpn_files.results | map(attribute='dest') | list}}"
+
+- name: Installing Non-DNF Downloaded packages
+  yum:
+    name: "{{vpn_rpms}}"
+    
+    
+

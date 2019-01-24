@@ -1,25 +1,35 @@
 ---
 # vars file for rhfedora
 #ansible_python_interpreter: /usr/bin/python3
+fedora_current: 29
 
 baseline_packages:
   - git
   - curl
   - terminator
-  - google-chrome
+  - google-chrome-stable
   - sublime-text
   - asciidoctor
   - libvirt
   - virt-manager
   - vim
+  - compat-openssl10
+  - powershell
+  - NetworkManager-openvpn
+  - NetworkManager-openvpn-gnome
+
+vpn_packages:
+  - redhat-internal-cert-install-0.1-9.el7.csb.noarch.rpm
+  - redhat-internal-NetworkManager-openvpn-profiles-0.1-30.el7.csb.noarch.rpm
 
 baseline_downloads:
   - https://downloads.slack-edge.com/linux_releases/slack-3.3.7-0.1.fc21.x86_64.rpm
   - http://atom.io/download/rpm
   - https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.14.7/rocketchat-2.14.7.x86_64.rpm
 
-gpg_keys:
-  - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+rpmfusion:
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_current }}.noarch.rpm
+    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_current }}.noarch.rpm
 
 developer_packages:
   - maven
