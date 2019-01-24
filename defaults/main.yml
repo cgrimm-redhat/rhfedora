@@ -48,3 +48,8 @@ developer_packages:
   - vagrant
   - docker
   - java-1.8.0-openjdk-devel
+
+remove_packages:
+  - rhythmbox
+  - evolution
+  - simple-scan

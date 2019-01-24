@@ -10,6 +10,11 @@
     line: 'fastestmirror=true'
     state: present
 
+- name: Removing packages I deemed dumb
+  dnf:
+    name: "{{ remove_packages }}"
+    state: absent
+
 - name: Upgrading all Existing System Packages
   dnf:
     name: "*"
