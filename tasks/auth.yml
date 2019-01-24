@@ -5,6 +5,7 @@
     src: "sssd.j2"
     dest: /etc/sssd/sssd.conf
     mode: 0600
+  register: sssd
     
 - name: Copy over RH Kerberos template
   template:
@@ -16,9 +17,11 @@
     name: sssd
     state: restarted
     enabled: yes
+  when: sssd.changed
 
 - name: Authselect configuration (gross command module)
   command: authselect select sssd with-mkhomedir --force
+  when: sssd.changed
 
 - name: Enable and start oddjobd
   systemd:
