@@ -46,3 +46,4 @@ developer_packages:
   - fuse-exfat
   - vagrant
   - docker
+  - java-1.8.0-openjdk-devel
