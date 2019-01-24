@@ -26,4 +26,14 @@
     state: started
     enabled: yes
 
+- name: Ensures /etc/opt/chrome/policies/managed dir exists for kerberos configuration
+  file: 
+    path: /etc/opt/chrome/policies/managed 
+    state: directory
+
+- name: Configure Chrome to enable Kerberos auth for Red Hat
+  copy:
+    src: chrome-redhat-corp.json
+    dest: /etc/opt/chrome/policies/managed/redhat-corp.json
+    mode: 0644
       
