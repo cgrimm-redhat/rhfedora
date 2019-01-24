@@ -21,6 +21,7 @@ baseline_packages:
   - NetworkManager-openvpn-gnome
   - sssd
   - krb5-workstation
+  - gnome-tweak-tool
 
 vpn_packages:
   - redhat-internal-cert-install-0.1-9.el7.csb.noarch.rpm
