@@ -21,7 +21,26 @@ $ sudo dnf install ansible python libselinux-python
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+#### rh_kerberosid: 
+This is simply your Red Hat userid to ensure that SSSD/Kerberos is configured properly.
+
+#### fedora_current:
+This is the fedora version you are configuring to ensure that we are pulling the correct rpmfusion rpms.
+
+#### baseline_packages:
+A listing of all packages to be installed via DNF, this list must also include packages that have had custom repos created for them so that they can be installed.  It is suspected this is unlikely modification but something to be prepared for.
+
+#### vpn_packages:
+This simply provides a listing of the two Red hat RPMs for install of rpmfusion.  These RPMs are included in the files directory of the role.
+
+#### baseline_downloads:
+Currently configured to download slack, rocket chat, and atom.  These are rpms that are downloaded and installed.  New rpms added here should be in the form of a url to download from.  Anything in this list will be installed dowloaded and installed.
+
+#### rpmfusion:
+This simply provides a listing of the two rpmfusion urls for install of rpmfusion.
+
+#### developer_packages:
+This is a list of DNF packages that are installed for the developer profile
 
 Dependencies
 ------------
