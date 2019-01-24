@@ -1,0 +1,6 @@
+---
+- name: Copy RH CA Certs to keystore
+  copy:
+    src: RH-IT-Root-CA.crt
+    dest: /etc/pki/tls/certs/RH-IT-Root-CA.crt
+

@@ -1,0 +1,29 @@
+---
+# tasks file for rhfedora
+- name: Copy over RH SSSD template
+  template:
+    src: "sssd.j2"
+    dest: /etc/sssd/sssd.conf
+    mode: 0600
+    
+- name: Copy over RH Kerberos template
+  template:
+    src: "krb5.j2"
+    dest: /etc/krb5.conf
+
+- name: Restarting SSSD to read in config files
+  systemd:
+    name: sssd
+    state: restarted
+    enabled: yes
+
+- name: Authselect configuration (gross command module)
+  command: authselect select sssd with-mkhomedir --force
+
+- name: Enable and start oddjobd
+  systemd:
+    name: oddjobd
+    state: started
+    enabled: yes
+
+      

@@ -9,8 +9,13 @@
 - import_tasks: baseline.yml
   tags:
     - baseline
-
+- import_tasks: auth.yml
+  tags:
+    - baseline
+- import_tasks: certs.yml
+  tags:
+    - baseline
 - import_tasks: developer.yml
   tags:
     - developer
-
+    
