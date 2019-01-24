@@ -1,0 +1,18 @@
+[logging]
+default = FILE:/var/log/krb5libs.log
+
+[libdefaults]
+dns_lookup_realm = true
+dns_lookup_kdc = true
+renew_lifetime = 7d
+forwardable = true
+rdns = false
+default_realm = REDHAT.COM
+
+[realms]
+REDHAT.COM = {
+}
+
+[domain_realm]
+redhat.com = REDHAT.COM
+.redhat.com = REDHAT.COM

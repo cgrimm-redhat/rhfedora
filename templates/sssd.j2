@@ -1,0 +1,26 @@
+[sssd]
+config_file_version = 2
+services = nss, pam, ssh
+domains = redhat.com
+
+[nss]
+filter_groups = root
+filter_users = root
+
+[pam]
+
+[domain/redhat.com]
+id_provider = ldap
+ldap_search_base = dc=redhat,dc=com
+
+auth_provider = krb5
+krb5_realm = REDHAT.COM
+krb5_store_password_if_offline = true
+
+access_provider = simple
+simple_allow_users = {{ rh_kerberosid }}
+
+ldap_user_ssh_public_key = ipaSshPubKey
+cache_credentials = true
+override_homedir = /home/%u
+lookup_family_order = ipv4_only

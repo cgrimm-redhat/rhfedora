@@ -1,6 +1,8 @@
 ---
 # vars file for rhfedora
 #ansible_python_interpreter: /usr/bin/python3
+rh_kerberosid: cgrimm
+
 fedora_current: 29
 
 baseline_packages:
@@ -17,6 +19,8 @@ baseline_packages:
   - powershell
   - NetworkManager-openvpn
   - NetworkManager-openvpn-gnome
+  - sssd
+  - krb5-workstation
 
 vpn_packages:
   - redhat-internal-cert-install-0.1-9.el7.csb.noarch.rpm
