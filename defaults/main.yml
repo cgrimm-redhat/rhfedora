@@ -27,7 +27,7 @@ vpn_packages:
 
 baseline_downloads:
   - http://atom.io/download/rpm
-  - https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.14.7/rocketchat-2.14.7.x86_64.rpm
+  - https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.15.2/rocketchat-2.15.2.x86_64.rpm
 
 rpmfusion:
   - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
