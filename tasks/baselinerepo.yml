@@ -34,3 +34,14 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Configure Slack Repos
+  yum_repository:
+    name: slack
+    description: slack
+    file: slack
+    baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
+    enabled: yes
+    gpgcheck: no
+    gpgkey: https://packagecloud.io/gpg.key
+

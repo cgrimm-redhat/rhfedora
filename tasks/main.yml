@@ -1,5 +1,9 @@
 ---
 # tasks file for rhfedora
+- name: Setting OS Specific Variables
+  include_vars: 
+    file: fedora30.yml 
+  when: ansible_distribution == "Fedora" and ansible_distribution_major_version >= "30"
 - import_tasks: baselinerepo.yml
   tags:
     - baseline

@@ -24,9 +24,6 @@ Role Variables
 #### rh_kerberosid: 
 This is simply your Red Hat userid to ensure that SSSD/Kerberos is configured properly.
 
-#### fedora_current:
-This is the fedora version you are configuring to ensure that we are pulling the correct rpmfusion rpms.
-
 #### baseline_packages:
 A listing of all packages to be installed via DNF, this list must also include packages that have had custom repos created for them so that they can be installed.  It is suspected this is unlikely modification but something to be prepared for.
 

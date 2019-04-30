@@ -1,9 +1,7 @@
 ---
 # vars file for rhfedora
-#ansible_python_interpreter: /usr/bin/python3
-rh_kerberosid: cgrimm
 
-fedora_current: 29
+rh_kerberosid: cgrimm
 
 baseline_packages:
   - git
@@ -28,13 +26,12 @@ vpn_packages:
   - redhat-internal-NetworkManager-openvpn-profiles-0.1-30.el7.csb.noarch.rpm
 
 baseline_downloads:
-  - https://downloads.slack-edge.com/linux_releases/slack-3.3.7-0.1.fc21.x86_64.rpm
   - http://atom.io/download/rpm
   - https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.14.7/rocketchat-2.14.7.x86_64.rpm
 
 rpmfusion:
-    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_current }}.noarch.rpm
-    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_current }}.noarch.rpm
+  - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
+  - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
 
 developer_packages:
   - maven

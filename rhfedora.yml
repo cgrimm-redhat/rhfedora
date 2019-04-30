@@ -1,5 +1,5 @@
 ---
-- hosts: fedora 
+- hosts: rhfedora 
   become: yes
   roles:
     - rhfedora
