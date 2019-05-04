@@ -1,5 +1,6 @@
 ---
 # tasks file for rhfedora
+# This file is no longer in use
 - name: Make directory for third party apps /tmp/rpms
   file:
     path: /tmp/rpms

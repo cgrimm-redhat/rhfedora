@@ -21,13 +21,12 @@ baseline_packages:
   - krb5-workstation
   - gnome-tweak-tool
   - rocketchat
+  - atom
 
 vpn_packages:
   - redhat-internal-cert-install-0.1-9.el7.csb.noarch.rpm
   - redhat-internal-NetworkManager-openvpn-profiles-0.1-30.el7.csb.noarch.rpm
 
-baseline_downloads:
-  - http://atom.io/download/rpm
 
 rpmfusion:
   - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
@@ -50,3 +49,8 @@ remove_packages:
   - rhythmbox
   - evolution
   - simple-scan
+
+# This is Currently Depricated from the code base
+#baseline_downloads:
+#  - http://atom.io/download/rpm
+

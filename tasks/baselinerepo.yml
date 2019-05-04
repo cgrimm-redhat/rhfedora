@@ -54,3 +54,15 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/xenithorb/rocketchat-dev/pubkey.gpg
+
+- name: Configure Atom Repos
+  yum_repository:
+    description: "Atom Editor"
+    name: Atom
+    file: atom
+    baseurl: https://packagecloud.io/AtomEditor/atom/el/7/$basearch
+    enabled: yes
+    repo_gpgcheck: yes
+    gpgcheck: no
+    gpgkey: https://packagecloud.io/AtomEditor/atom/gpgkey
+

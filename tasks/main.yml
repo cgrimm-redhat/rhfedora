@@ -4,27 +4,32 @@
   include_vars: 
     file: fedora30.yml 
   when: ansible_distribution == "Fedora" and ansible_distribution_major_version >= "30"
-
-  #- name: Configure Lenovo Specific Tweaks
-  #  import_tasks: lenovo.yml
-  #  when: ansible_product_version == "ThinkPad T460s"  
   
 - import_tasks: baselinerepo.yml
   tags:
     - baseline
-- import_tasks: baselinerpm.yml
-  tags:
-    - baseline
+    
 - import_tasks: baseline.yml
   tags:
     - baseline
+    
 - import_tasks: auth.yml
   tags:
     - baseline
+    
 - import_tasks: certs.yml
   tags:
     - baseline
+    
 - import_tasks: developer.yml
   tags:
     - developer
-    
+  
+  #- name: Configure Lenovo Specific Tweaks
+  #  import_tasks: lenovo.yml
+  #  when: ansible_product_version == "ThinkPad T460s"
+
+  #- import_tasks: baselinerpm.yml
+  #  tags:
+  #    - baseline
+
