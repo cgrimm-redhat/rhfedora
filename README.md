@@ -28,7 +28,7 @@ This is simply your Red Hat userid to ensure that SSSD/Kerberos is configured pr
 A listing of all packages to be installed via DNF, this list must also include packages that have had custom repos created for them so that they can be installed.  It is suspected this is unlikely modification but something to be prepared for.
 
 #### vpn_packages:
-This simply provides a listing of the two Red hat RPMs for install of rpmfusion.  These RPMs are included in the files directory of the role.
+This simply provides a listing of the two Red hat RPMs for install.  These RPMs are included in the files directory of the role.
 
 #### rpmfusion:
 This simply provides a listing of the two rpmfusion urls for install of rpmfusion.

@@ -22,6 +22,7 @@ baseline_packages:
   - gnome-tweak-tool
   - rocketchat
   - atom
+  - slack
 
 vpn_packages:
   - redhat-internal-cert-install-0.1-9.el7.csb.noarch.rpm

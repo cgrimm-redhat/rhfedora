@@ -49,7 +49,7 @@
   set_fact:
     vpn_rpms: "{{ vpn_files.results | map(attribute='dest') | list}}"
 
-- name: Installing Non-DNF Downloaded packages
+- name: Installing VPN Packages
   yum:
     name: "{{vpn_rpms}}"
   tags:
