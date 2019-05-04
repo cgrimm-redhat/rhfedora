@@ -30,9 +30,6 @@ A listing of all packages to be installed via DNF, this list must also include p
 #### vpn_packages:
 This simply provides a listing of the two Red hat RPMs for install of rpmfusion.  These RPMs are included in the files directory of the role.
 
-#### baseline_downloads:
-Currently configured to download slack, rocket chat, and atom.  These are rpms that are downloaded and installed.  New rpms added here should be in the form of a url to download from.  Anything in this list will be installed dowloaded and installed.
-
 #### rpmfusion:
 This simply provides a listing of the two rpmfusion urls for install of rpmfusion.
 
