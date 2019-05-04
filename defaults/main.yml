@@ -20,6 +20,7 @@ baseline_packages:
   - sssd
   - krb5-workstation
   - gnome-tweak-tool
+  - rocketchat
 
 vpn_packages:
   - redhat-internal-cert-install-0.1-9.el7.csb.noarch.rpm
@@ -27,7 +28,6 @@ vpn_packages:
 
 baseline_downloads:
   - http://atom.io/download/rpm
-  - https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.15.2/rocketchat-2.15.2.x86_64.rpm
 
 rpmfusion:
   - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm

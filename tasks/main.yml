@@ -1,9 +1,14 @@
 ---
 # tasks file for rhfedora
-- name: Setting OS Specific Variables
+- name: Setting Fedora 30 OS Specific Variables
   include_vars: 
     file: fedora30.yml 
   when: ansible_distribution == "Fedora" and ansible_distribution_major_version >= "30"
+
+  #- name: Configure Lenovo Specific Tweaks
+  #  import_tasks: lenovo.yml
+  #  when: ansible_product_version == "ThinkPad T460s"  
+  
 - import_tasks: baselinerepo.yml
   tags:
     - baseline

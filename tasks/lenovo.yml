@@ -1,0 +1,26 @@
+---
+###NOT IMPLEMENTEd or TESTED###
+- name: Install necessary inofficial repos for tlp on ThinkPad
+  dnf:
+    name:
+    - http://repo.linrunner.de/fedora/tlp/repos/releases/tlp-release-1.0-0.noarch.rpm
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+    state: present
+  when: allow_inofficial_free_repos
+- name: Install (and potentially configure) power saving tools
+  dnf:
+    name:
+    - tlp # Advanced power management tool for Linux
+    - tlp-rdw # Radio Device Wizard for TLP
+    - smartmontools # Tools for monitoring SMART capable hard disks
+    #- powertop # Power consumption monitor
+    #- tuned-utils # Various tuned utilities (powertop2tuned)
+    state: present
+- name: Install power saving tools for ThinkPad from inofficial repos
+  dnf:
+    name:
+    - akmod-tp_smapi
+    - akmod-acpi_call
+    - kernel-devel
+    state: present
+  when: allow_inofficial_free_repos

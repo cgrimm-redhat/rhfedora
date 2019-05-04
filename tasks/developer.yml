@@ -4,7 +4,8 @@
   dnf:
     name: "{{ developer_packages }}"
     state: latest
-
+  tags:
+    - online
     #- name: Make directory for developer third party apps /tmp/dev/rpms
     #  file:
     #    path: /tmp/dev/rpms
