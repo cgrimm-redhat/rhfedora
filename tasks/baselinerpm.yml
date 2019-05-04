@@ -1,6 +1,6 @@
 ---
 # tasks file for rhfedora
-# This file is no longer in use
+#DEPRECATED This file is no longer in use DEPRECATED
 - name: Make directory for third party apps /tmp/rpms
   file:
     path: /tmp/rpms
