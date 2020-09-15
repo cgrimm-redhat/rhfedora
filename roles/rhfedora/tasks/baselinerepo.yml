@@ -45,16 +45,6 @@
     gpgcheck: no
     gpgkey: https://packagecloud.io/gpg.key
 
-- name: Configure Rocket Chat Repos
-  yum_repository:
-    description: "Copr repo for rocketchat-dev owned by xenithorb"
-    name: xenithorb-rocketchat-dev
-    file: rocketchat
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/xenithorb/rocketchat-dev/fedora-$releasever-$basearch/
-    enabled: yes
-    gpgcheck: yes
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/xenithorb/rocketchat-dev/pubkey.gpg
-
 - name: Configure Atom Repos
   yum_repository:
     description: "Atom Editor"

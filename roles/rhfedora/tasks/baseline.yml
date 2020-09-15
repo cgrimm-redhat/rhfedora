@@ -16,6 +16,7 @@
     state: absent
   tags:
     - online
+  ignore_errors: true
 
 - name: Upgrading all Existing System Packages
   dnf:
